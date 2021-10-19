@@ -1,38 +1,567 @@
-.App {
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+/* signup container styling -------------------------------------------------------------------*/
+
+.login-boss-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fafafa;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.main-container{
+  width: 60vw;
+  height: 65vh;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 50px 0px #00000026;
+  border-radius: 10px;
+
+}
+
+.orange-rectangle{
+  width: 35%;
+  height: 108%;
+  background: #FF8800;
+  box-shadow: 2px 0px 15px 0px #00000057;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(20% , -4%);
+  transition: 0.3s;
+}
+
+.orange-rectangle h1{
+  position: fixed;
+  color: white;
+  font-weight: 900;
+  font-size: 2.4rem;
+}
+
+.upper-triangle{
+  position: fixed;
+  top: 14.8%;
+  border-right: 25px solid transparent;
+  border-bottom: 16px solid #FF8800;
+  left: 45.2%;
+}
+
+.lower-triangle{
+  position: fixed;
+  top: 81.8%;
+  border-right: 16px solid transparent;
+  border-bottom: 25px solid #FF8800;
+  left: 45.2%;
+  transform: rotate(90deg);
+}
+
+.text-container{
+  /* background-color: rgba(222, 184, 135, 0.342);  */
+  width: 20%;
+  height: 65%;
+  position: fixed;
+  top: 18%;
+  left: 53%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  animation: fadeInAnimation ease 0.3s;
+}
+
+.wrapper{
+  height: 50px;
+  width: 100%;
+  margin: 8px 0px;
+  /* background-color: antiquewhite; */
+  display: flex;
+  align-items: center;
+}
+
+.text-container h2{
+  color: #FF8800;
+  font-size: 20px;
+}
+
+.wrapper h3{
+  text-align: center;
+  color: #9D9D9D;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.continue-with-google{
+  height: 40px;
+  padding: 0% 3%;
+  width: 100%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: white;
+  font-size: 1rem;
+  color: #9D9D9D;
+  box-shadow: 0px 0px 10px 0px #00000033;
+}
+
+.continue-with-google:hover{
+  box-shadow: 0px 0px 20px 0px #00000033;
+  transition: 0.3s;
+}
+
+.continue-with-google img{
+  width: 30px;
+  height: 30px;
+}
+
+.text-feild{
+  height: 50px;
+  width: 100%;
+  background-color: cadetblue;
+}
+
+.text-feild-input{
+  height: 100%;
+  width: 97%;
+  border-bottom: 2px solid #D6D5D5;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  font-size: 20px;
+  color: #9D9D9D;
+  font-size: 18px;
+  padding-left: 3%;
+  /* background-color: chocolate; */
+}
+
+.text-feild-input:focus{
+  outline: none;
+  border-bottom: 2px solid #FF8800;
+}
+.verify-button{
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #FF8800;
+  border: none;
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.verify-button:hover{
+  background-color: #ffffff;
+  transition: 0.3s;
+  color: #FF8800;
+  border: 1px solid #FF8800;
+}
+
+.last-line{
+  font-size: 0.9rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.horizontallyCenter{
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.last-line strong{
+  color: #FF8800;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.last-line strong:hover{
+  text-decoration: underline 2px solid #FF8800;
+}
+
+
+/* styling for login text input feilds---------------------------------------------------------------- */
+
+/* main container .text-container is used */
+
+.eye-icon-css{
+  color: grey;
+  position: fixed;
+  right: 28%;
+  top: 40%;
+  cursor: pointer;
+}
+
+.enterDetails-container{
+  /* background-color: rgba(222, 184, 135, 0.342); */
+  width: 30%;
+  height: 40%;
+  position: fixed;
+  top: 20%;
+  left: 47%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  animation: fadeInAnimation2 ease 0.3s;
+}
+
+/* profile photo uploading container */
+
+.upload-profile-pic{
+  padding: 6px;
+  border-radius: 10px;
+  display: flex;
   align-items: center;
+}
+
+.upload-profile-pic p{
+  padding-left: 5%;
+}
+
+.profile-pic{
+  border: 1px solid #FF8800;
+  background-color: grey;
+  border-radius: 100px;
+  width: 60px;
+  height: 60px;  
+}
+
+.custom-file-input::-webkit-file-upload-button {
+  width: 150px;
+  height: 30px;
+  border: none;
+  border: 1px solid grey;
+  background-color: transparent;
+  border-radius: 10px;
+  margin-left: 4%;
+
+  color: grey;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+input[type='file'] {
+  color: rgba(0, 0, 0, 0)
+}
+
+.custom-file-input::-webkit-file-upload-button:hover{
+  border: 1px solid #FF8800;
+  color: #FF8800;
+}
+
+.greeting{
+  color: #FF8800;
+  font-size: 16px;
+  font-weight: 600;
+  padding-bottom: 10px;
+}
+
+.skip-button-container{
+  position: absolute;
+  right: -20px;
+  bottom: -130px;
+  /* background-color: burlywood; */
+}
+
+.save-button-container{
+  position: absolute;
+  right: -20px;
+  bottom: -130px;
+}
+
+.save-button-container, .skip-button-container{
+  width: fit-content;
+  height: 50px;
+  display: flex;
+  flex-direction: row-reverse;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+#skipbutton{
+  background-color: transparent;
+  border: none;
+  width: 167px;
+  padding: 0px 12px;
+  color: #FF8800;
+  font-weight: 400;
+}
+
+#skipbutton:hover{
+  text-decoration: underline 2px solid #FF8800;
+}
+
+.default-button{
+  width: 150px;
+  height: 40px;
+  border: none;
+  background: #FF8800;
+  border-radius: 10px;
+
   color: white;
+  font-size: 16px;
+  font-weight: 700;
 }
 
-.App-link {
-  color: #61dafb;
+.default-button:hover{
+  background-color: #ffffff;
+  transition: 0.3s;
+  color: #FF8800;
+  border: 1px solid #FF8800;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* interest container styling--------------------------------------------------------------------------------------------------------- */
+
+.interest-container{
+  padding: 30px 0px;
+  /* background-color: aliceblue; */
+  width: 100%;
+  height: 30vh;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.feildOfInt{
+  padding: 4px 15px;
+  margin: 5px;
+  border-radius: 5px;
+  width: fit-content;
+  height: 20px;
+  transition: 0.2s;
+
+  color: white;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.position{
+  position: absolute;
+  right: -25px;
+  bottom: -60px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* all animations keyframes ----------------------------------------------------------------------------------------------------------------------- */
+
+/* enter details animation */
+@keyframes fadeInAnimation2 {
+  0% {
+    opacity: 0;
+    left: 44%;
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    opacity: 1;
+    left: 47%;
   }
 }
+
+/* enter details animation for mobile devices */
+@keyframes fadeInAnimation2Mobile {
+  0% {
+    opacity: 0;
+    left: 7%;
+  }
+  100% {
+    opacity: 1;
+    left: 10%;
+  }
+}
+
+/* login and signup container animation  */
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+    left: 50%;
+  }
+  100% {
+    opacity: 1;
+    left: 53%;
+  }
+}
+
+/* login and signup container animations for mobile devices */
+@keyframes fadeInAnimationMobile {
+  0% {
+    opacity: 0;
+    left: 7%;
+  }
+  100% {
+    opacity: 1;
+    left: 10%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* media qurries for screen width less than 1000px */
+
+@media screen and (max-width:1000px) {
+
+  /* for authorization layout */
+  .orange-rectangle, .lower-triangle, .upper-triangle{
+    display: none;
+  }
+  .main-container{
+    width: 90vw;
+    height: 90vh;
+  }
+  .login-boss-container{
+    background-color: #FF8800;
+  }
+  .text-container{
+    /* background-color: rgba(222, 184, 135); */
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    top: 0%;
+    left: 10%;
+    animation: fadeInAnimationMobile ease 0.3s;
+  }
+  .eye-icon-css{
+    right: 15%;
+    top: 41%;
+  }
+
+
+
+
+
+
+  /* .enterDetails-container styling */
+  .enterDetails-container{
+    /* background-color: rgba(222, 184, 135); */
+    width: 80%;
+    height: 100%;
+    top: 7%;
+    left: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    animation: fadeInAnimation2Mobile ease 0.3s;
+  }
+
+  .skip-button-container{
+    position: relative;
+    bottom: -30%;
+    right: 0%;
+    /* background-color: burlywood; */
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .save-button-container{
+    position: relative;
+    bottom: -46%;
+    right: 0%;
+    width: 100%;
+  }
+
+  .upload-profile-pic{
+    background-color: transparent;
+  }
+  
+  .default-button{
+    width: 100%;
+    height: 40px;
+    border: none;
+    background: #FF8800;
+    border-radius: 10px;
+  
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+  }
+  
+  .default-button:hover{
+    background-color: #ffffff;
+    transition: 0.3s;
+    color: #FF8800;
+    border: 1px solid #FF8800;
+  }
+  
+
+
+
+
+
+
+
+  /* interest container---------------------------------------------------------------------------------------------------------------- */
+  .interest-container{
+    padding: 30px 0px;
+    /* background-color: aliceblue; */
+    width: 100%;
+    height: 30vh;
+  }
+  .position{
+    position: absolute;
+    right: 0px;
+    bottom: 90px;
+  }
+
+
+
+
+
+
+
+
+
+  /*buttons properties for mobile---------------------------------------------------------------------------------------------------------------- */
+  .verify-button:hover{
+    background-color: #FF8800;
+    transition: 0.01s;
+    color: white;
+    border: none
+  }
+  .verify-button:active{
+    background-color: #e27800;
+    transition: 0.1s;
+  }
+  .default-button:hover{
+    background-color: #FF8800;
+    transition: 0.1s;
+    color: white;
+    border: none;
+  }
+  .default-button:active{
+    background-color: #e27800;
+    transition: 0.1s;
+  }
+  
+}
+
+
