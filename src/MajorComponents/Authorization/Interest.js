@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import FeildOfInterest from '../../SmallComponents/FeildOfInterest'
 
-export default function Interest() {
+export default function Interest(props) {
 
     // counting of 'number of categories selected'
     const [count, setcount] = useState(0)
@@ -57,6 +57,10 @@ export default function Interest() {
         console.log(categories);
     }, [count])
 
+    const proceedToHomepage = () => {
+        props.setswitchPages(4);
+    }
+
     return (
         <>
         <div className="enterDetails-container">
@@ -86,7 +90,7 @@ export default function Interest() {
 
             <div className="skip-button-container">
                 <div className="wrapper">
-                    <button className="default-button">Proceed</button>
+                    <button className="default-button" onClick={proceedToHomepage}>Proceed</button>
                 </div>
             </div>
         </div>
