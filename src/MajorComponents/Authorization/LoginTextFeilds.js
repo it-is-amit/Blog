@@ -1,7 +1,14 @@
 import React, { useState } from 'react';
 import google from '../../images/google.png';
+import SignupTextFeilds from './SignupTextFeilds'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
 
-export default function LoginTextFeilds(props) {
+export default function LoginTextFeilds({ props , match}) {
 
     const [passwordVisiblity, setPasswordVisiblity] = useState('password')
     
@@ -21,6 +28,7 @@ export default function LoginTextFeilds(props) {
     }
 
     return (
+    <Router>
         <div className="text-container">
 
             <div className="wrapper">
@@ -62,11 +70,12 @@ export default function LoginTextFeilds(props) {
             <div className="wrapper">
                 <di className="horizontallyCenter">
                     <p className="last-line">
-                        New to GRADS? <strong onClick={switchBetweenLoginSignup}>Signup</strong> here
+                        {/* <Route path="/auth/signup" component={SignupTextFeilds}/> */}
+                        New to GRADS? <strong><Link to="/auth/signup">Signup</Link></strong> here
                     </p>
                 </di>
             </div>
-
         </div>
+    </Router>
     )
 }

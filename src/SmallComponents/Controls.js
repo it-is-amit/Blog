@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 export default function Controls(props) {
 
@@ -48,7 +48,7 @@ export default function Controls(props) {
                 {/* show comments */}
                 {
                     props.showComments ? <div className="controls comments">
-                    <i class="far fa-comment-alt fa-sm"></i><span>&ensp;{props.comments}</span>
+                    <i className="far fa-comment-alt fa-sm"></i><span>&ensp;{props.comments}</span>
                     </div> : ''
                 }
             </div>
@@ -61,7 +61,7 @@ export default function Controls(props) {
                 {/* share button */}
                 {
                     props.showSharingButton ? <div className="controls share">
-                    <i class="fas fa-share"></i>
+                    <i className="fas fa-share"></i>
                     </div> : ''
                 }
                 
@@ -69,7 +69,7 @@ export default function Controls(props) {
                 {/* show 3 dot menu  */}
                 {
                     props.showMenu ? <div className="controls threeDots-menu">
-                    <i class="fas fa-ellipsis-v"></i>
+                    <i className="fas fa-ellipsis-v"></i>
                     </div> : ''
                 }
             </div>

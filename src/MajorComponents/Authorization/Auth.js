@@ -1,21 +1,22 @@
 import React, { useState } from 'react'
-import Homepage from '../Homepage';
-import Enterdetails from './Enterdetails';
-import Interest from './Interest';
+// import Homepage from '../Homepage';
 import LoginTextFeilds from './LoginTextFeilds'
 import SignupTextFeilds from './SignupTextFeilds'
+import Interest from './Interest'
+import Enterdetails from './Enterdetails'
 
-export default function Auth() {
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    // Link
+  } from "react-router-dom";
 
-    // declaring numbers for each page during authentication
-    // 0-login , 1-signup , 2-enter details and any other number - Choose interest
-    const [switchPages, setswitchPages] = useState(4);
-
+export default function Auth({match}) {
+    console.log(match.path);
     return (
         <>
-
-                {switchPages === 4 ? <Homepage/>
-                :
+           <Router>
                 <div className="login-boss-container">
                     <div className="main-container">
 
@@ -28,15 +29,21 @@ export default function Auth() {
                             <h1>Grads</h1>
                         </div>
 
-                        {/* using same layout for external container, and using signupTextFeilds component for signup and loginTextFeilds for login*/}
-                        { switchPages === 0 ? <LoginTextFeilds setswitchPages={setswitchPages}/> 
-                        : switchPages === 1 ? <SignupTextFeilds setswitchPages={setswitchPages}/>
-                        : switchPages === 2 ? <Enterdetails/>
-                        : <Interest setswitchPages={setswitchPages}/>
-                    }
+                        <Switch>
+                            <Route path={`${match.path}/`} exact><LoginTextFeilds/></Route>
+                            <Route path={`${match.path}/signup`}><SignupTextFeilds/></Route>
+                            <Route path={`${match.path}/details`}><Enterdetails/></Route>
+                            <Route path={`${match.path}/int`}><Interest/></Route>
+                        </Switch>
 
                     </div>
-                </div>}
+                    {/* <Link to={`${match.path}/`}>Login</Link>
+                    <Link to={`${match.path}/signup`}>sign</Link>
+                    <Link to={`${match.path}/int`}>iny=t</Link>
+                    <Link to={`${match.path}/details`}>det</Link> */}
+                </div>
+           </Router>
+           
 
         </>
     )

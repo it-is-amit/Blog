@@ -1,14 +1,18 @@
 import React from 'react'
 import Controls from './Controls'
+import {
+    BrowserRouter as Router,
+    Link
+  } from "react-router-dom";
 
 export default function QuestionTile(props) {
     return (
         <div className="question-tile">
-
-            <div className="question-title">
+            <Router>
+            <Link className="question-title" to={`/question/${props.id}`} target="_blank">
                 {/* title of the question/blog in the current tile */}
-                {props.questionTitle} 
-            </div>
+                {props.questionTitle}
+            </Link>
 
             <div className="question-tag">
                 <span>
@@ -20,9 +24,13 @@ export default function QuestionTile(props) {
                 </span>
             </div>
 
+            <div style={{fontSize:'14px'}}>
+                {`${props.content.substring(0, 70)}...`}<Link to={`/question/${props.id}`} target="_blank">Read more</Link>
+            </div>
+            <br/>
+
             {/* image container , if any post contain any images. */}
-            {/* style={{background:`url("${imgPreview}") no-repeat center/cover`}} */}
-            <div className="image-container" style={{background:`url("${props.image}") no-repeat center/contain`}}></div>
+            <div className="image-container" style={{background:`url("${props.image}") no-repeat center/cover`}}></div>
             
             {/* set 'showLikesAndDislikes, showAnswers, showAnswerButton, showViews, showComments, showSharingButton, showMenu' to true for showing it into the page. */}
 
@@ -61,6 +69,7 @@ export default function QuestionTile(props) {
             {
                 props.type === 'blog' ? <div className="openBlog">See blog</div> : ''
             }
+            </Router>
         </div>
     )
 }

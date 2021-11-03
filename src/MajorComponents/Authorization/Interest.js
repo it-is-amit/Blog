@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import FeildOfInterest from '../../SmallComponents/FeildOfInterest'
 
 export default function Interest(props) {
@@ -52,10 +52,6 @@ export default function Interest(props) {
         },
     ]
 
-
-    useEffect(()=>{
-        console.log(categories);
-    }, [count])
 
     const proceedToHomepage = () => {
         props.setswitchPages(4);
