@@ -29,6 +29,7 @@ export default function Auth({match}) {
                             <h1>Grads</h1>
                         </div>
 
+                        
                         <Switch>
                             <Route path={`${match.path}/`} exact><LoginTextFeilds/></Route>
                             <Route path={`${match.path}/signup`}><SignupTextFeilds/></Route>
